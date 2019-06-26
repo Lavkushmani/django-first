@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title> New File</title>
+</head>
+<div>
+    <button><a href="http://127.0.0.1:8000/home" target="blank">GO To Home</a></button>
+    <button><a href="http://127.0.0.1:8000/add">aur short krna hai then click me!</a></button>
+</div>
+<body>
+
+{% for obj in objs %}
+    <h2>{{ obj.long_url }}</h2>
+    <a href="{{ obj.long_url }}" target="_blank">http://127.0.0.1:8000/{{ obj.shortcode }}</a>
+    <h2>{{ obj.created_date }}</h2>
+    <button><a href="http://127.0.0.1:8000/edit/{{obj.pk}}">Edit</a></button>
+    <button><a href="http://127.0.0.1:8000/delete/{{obj.pk}}">Delete</a></button>
+    <hr>
+{% endfor %}
+</body>
+</html>
